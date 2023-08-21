@@ -14,7 +14,7 @@ import {
 
 const page = async ({ params }) => {
   const id = params.id;
-  const res = await fetch(`http://localhost:3000/api/projects/${id}`);
+  const res = await fetch(`https://shafaet.vercel.app/api/projects/${id}`);
   const data = await res.json();
   return (
     <section className="container mx-auto px-4">
