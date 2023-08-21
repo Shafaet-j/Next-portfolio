@@ -1,7 +1,12 @@
+"use client";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 
 const Navbar = () => {
+  const router = useRouter();
+  const pathname = usePathname();
+  console.log(pathname);
   const navlinks = [
     {
       path: "/",
@@ -32,9 +37,13 @@ const Navbar = () => {
         </Link>
         <ul className=" flex gap-10">
           {navlinks.map(({ path, title }) => (
-            <li key={path} className=" relative group nav-link">
+            <li key={path} className="relative group nav-link">
               <Link
-                className=" font-bold text-[#adbef8] group-hover:text-[#5C27FE] duration-300 text-base active"
+                className={`${
+                  pathname === path
+                    ? "text-[#5C27FE] font-bold text-base"
+                    : "font-bold text-[#adbef8] group-hover:text-[#5C27FE] duration-300 text-base"
+                }`}
                 href={path}
               >
                 {title}

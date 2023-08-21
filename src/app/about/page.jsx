@@ -14,7 +14,7 @@ const Aboutpage = () => {
             <h3 className="mb-3 text-2xl text-[#5C27FE] name-link relative ml-7 pl-3 font-medium">
               About me
             </h3>
-            <h2 className="mb-8 text-2xl lg:text-5xl font-bold ">
+            <h2 className="mb-8 text-2xl lg:text-4xl font-bold ">
               Hi, Im here <br />
               to help your next project
             </h2>
