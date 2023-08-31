@@ -51,11 +51,21 @@
   },
   {
     "id": 6,
-    "title": "Project 6",
-    "image": "https://i.ibb.co/Vtk7C17/jobhunter.png",
-    "info": "This is the description for Project 6.",
+    "title": "Recruit pro",
+    "image": "https://i.ibb.co/XpNHjHZ/recruiter.png",
+    "info": "Recruiter pro is a job portal website.User can login and signUp here.User can search jobs in this website and apply job ",
     "category": "front-end",
-    "liveSite": "",
+    "liveSite": "https://recruitpro.netlify.app/",
+    "client": "https://github.com/Shafaet-j/recruit-client",
+    "server": "https://github.com/Shafaet-j/recruit-server"
+  },
+  {
+    "id": 7,
+    "title": "QuadShow",
+    "image": "https://i.ibb.co/k3Bvmd4/quadshow.png",
+    "info": "Quadshow is a Movie ticket booking website.User can see movie details and booking movie ticket in this website.",
+    "category": "front-end",
+    "liveSite": "https://quadshow.netlify.app/",
     "client": "",
     "server": ""
   }
