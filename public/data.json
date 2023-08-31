@@ -68,5 +68,15 @@
     "liveSite": "https://quadshow.netlify.app/",
     "client": "",
     "server": ""
+  },
+  {
+    "id": 8,
+    "title": "QuadShow",
+    "image": "https://i.ibb.co/9w0ktMs/screencapture-shafaetassignment3-netlify-app-2023-08-31-15-14-45.png",
+    "info": "This is Fully Responsive Front end website.I build this website using Html, Css, and Bootstrap",
+    "category": "front-end",
+    "liveSite": "https://shafaetassignment3.netlify.app/",
+    "client": "",
+    "server": ""
   }
 ]
