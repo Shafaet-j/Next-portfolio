@@ -2,7 +2,7 @@ import { FaQuoteRight } from "react-icons/fa";
 
 const testimonialData = [
   {
-    name: "Taha",
+    name: "Shafaet",
     icon: FaQuoteRight,
     iconSize: 50,
     subtitle: `"Working with Shafaet has been an absolute pleasure. Their
@@ -18,11 +18,10 @@ const testimonialData = [
     Shafaet is a talented and dedicated developer who
     consistently delivers high-quality results. I highly recommend
     their services!"`,
-    image:
-      "https://cdn.pixabay.com/photo/2017/11/02/14/36/model-2911363_960_720.jpg",
+    image: "https://i.ibb.co/r6H7Hvs/chanchal.jpg",
   },
   {
-    name: "Taha",
+    name: "Chanchal",
     icon: FaQuoteRight,
     iconSize: 50,
     subtitle: `"Working with Shafaet has been an absolute pleasure. Their
@@ -38,11 +37,10 @@ const testimonialData = [
     Shafaet is a talented and dedicated developer who
     consistently delivers high-quality results. I highly recommend
     their services!"`,
-    image:
-      "https://cdn.pixabay.com/photo/2017/11/02/14/36/model-2911363_960_720.jpg",
+    image: "https://i.ibb.co/r6H7Hvs/chanchal.jpg",
   },
   {
-    name: "Taha",
+    name: "Shaft",
     icon: FaQuoteRight,
     iconSize: 50,
     subtitle: `"Working with Shafaet has been an absolute pleasure. Their
@@ -58,8 +56,7 @@ const testimonialData = [
     Shafaet is a talented and dedicated developer who
     consistently delivers high-quality results. I highly recommend
     their services!"`,
-    image:
-      "https://cdn.pixabay.com/photo/2017/11/02/14/36/model-2911363_960_720.jpg",
+    image: "https://i.ibb.co/r6H7Hvs/chanchal.jpg",
   },
 ];
 
