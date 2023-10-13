@@ -4,9 +4,29 @@ import {
   TbBrandMongodb,
   TbBrandTailwind,
   TbBrandBootstrap,
+  TbBrandTypescript,
+  TbBrandStripe,
+  TbBrandRedux,
+  TbBrandNextjs,
+  TbBrandHtml5,
+  TbBrandCss3,
 } from "react-icons/tb";
 
 const technologyData = [
+  {
+    title: "Html",
+    description:
+      "Experienced in HTML5, I develop interactive and dynamic user interfaces.",
+    icon: TbBrandHtml5,
+    iconSize: 60,
+  },
+  {
+    title: "Css",
+    description:
+      "Experienced in Css, I develop interactive and dynamic user interfaces.",
+    icon: TbBrandCss3,
+    iconSize: 60,
+  },
   {
     title: "React js",
     description:
@@ -36,6 +56,13 @@ const technologyData = [
     iconSize: 60,
   },
   {
+    title: "NextJs",
+    description:
+      "Proficient in Next js, I create customized and responsive user interfaces efficiently with Next js.",
+    icon: TbBrandNextjs,
+    iconSize: 60,
+  },
+  {
     title: "MongoDb",
     description:
       "MongoDB allows me to store, retrieve, and manipulate data efficiently.",
@@ -47,6 +74,27 @@ const technologyData = [
     description:
       "Skilled in Bootstrap, I develop modern and visually appealing websites.",
     icon: TbBrandBootstrap,
+    iconSize: 60,
+  },
+  {
+    title: "TypeScript",
+    description:
+      "Skilled in TypeScript, I develop modern and visually appealing websites.",
+    icon: TbBrandTypescript,
+    iconSize: 60,
+  },
+  {
+    title: "Stripe",
+    description:
+      "Skilled in Stripe, I develop modern and visually appealing websites.",
+    icon: TbBrandStripe,
+    iconSize: 60,
+  },
+  {
+    title: "Redux",
+    description:
+      "Skilled in Redux, I develop modern and visually appealing websites.",
+    icon: TbBrandRedux,
     iconSize: 60,
   },
 ];
