@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import { GiCheckMark } from "react-icons/gi";
 
 import Image from "next/image";
@@ -10,7 +12,12 @@ const Aboutpage = () => {
     <>
       <section className=" px-5 container mx-auto">
         <div className="grid grid-cols-1 items-center gap-4 md:grid-cols-2">
-          <div className="w-full text-left">
+          <motion.div
+            initial={{ x: -500, opacity: 0 }}
+            animate={{ x: 0, opacity: 100 }}
+            transition={{ duration: 0.5 }}
+            className="w-full text-left"
+          >
             <h3 className="mb-3 text-2xl text-[#5C27FE] name-link relative ml-7 pl-3 font-medium">
               About me
             </h3>
@@ -67,13 +74,18 @@ const Aboutpage = () => {
                 Download C.V
               </a>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="w-full">
+          <motion.div
+            initial={{ x: 500, opacity: 0 }}
+            animate={{ x: 0, opacity: 100 }}
+            transition={{ duration: 0.5 }}
+            className="w-full"
+          >
             <div>
               <Image placeholder="blur" src={about} alt="person" />
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
       <section className=" border-b-2 border-slate-800">

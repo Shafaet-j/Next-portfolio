@@ -1,11 +1,17 @@
-import React from "react";
+"use client";
+import { motion } from "framer-motion";
 import { DiAndroid } from "react-icons/di";
 import { MdOutlineLaptopMac } from "react-icons/md";
 import { IoMdBrush } from "react-icons/io";
 
 const Right = () => {
   return (
-    <div className="w-full">
+    <motion.div
+      initial={{ x: -500, opacity: 0 }}
+      animate={{ x: 0, opacity: 100 }}
+      transition={{ duration: 0.5 }}
+      className="w-full"
+    >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:justify-end">
         <div className="grid grid-cols-1 gap-8">
           <div
@@ -48,7 +54,7 @@ const Right = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
