@@ -59,7 +59,7 @@ const Education = () => {
                 2021 - 2022
               </span>
             </div>
-            <p>Programming Hero</p>
+            <p>Coders Foundation</p>
             <p className=" mt-5 font-sans text-xl">
               I am proficient in front-end WordPress development, utilizing
               HTML, CSS, and JavaScript to create visually appealing and

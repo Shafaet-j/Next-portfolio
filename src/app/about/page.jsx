@@ -69,7 +69,8 @@ const Aboutpage = () => {
               </Link>
               <a
                 className="text-[#5C27FE] hover:text-[#808DAD] duration-300"
-                href=""
+                href="https://drive.google.com/file/d/14fFsP9sSgxhoXt1-0nrJg_FAlEVV3I5U/view?usp=sharing"
+                target="_blank"
               >
                 Download C.V
               </a>
