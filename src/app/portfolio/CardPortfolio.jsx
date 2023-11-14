@@ -4,7 +4,7 @@ import React, { Suspense } from "react";
 import { BsArrowRight } from "react-icons/bs";
 
 const CardPortfolio = ({ singleData }) => {
-  const { image, title, info, id } = singleData;
+  const { image, title, info, id, technology_used } = singleData;
   return (
     <Suspense
       fallback={
@@ -18,7 +18,16 @@ const CardPortfolio = ({ singleData }) => {
         <h3 className="mb-3 text-xl gradient-text font-bold">{title}</h3>
         <p className="text-[#808DAD]">{info.slice(0, 80)}...</p>
         <ul className="flex items-center gap-2">
-          <li className="bg-gray-800 px-4 py-1 rounded text-[#808DAD] hover: duration-300">
+          {technology_used.map((ele, ind) => (
+            <span
+              className={`${
+                ind % 2 ? "bg-[#ffffff1a] mx-3" : "bg-[#eec94f4d]"
+              }  px-5 py-1 rounded-md`}
+            >
+              {ele}
+            </span>
+          ))}
+          {/* <li className="bg-gray-800 px-4 py-1 rounded text-[#808DAD] hover: duration-300">
             <a>Web UI-UX</a>
           </li>
           <li className="bg-gray-800 px-4 py-1 rounded text-[#808DAD] hover: duration-300">
@@ -26,7 +35,7 @@ const CardPortfolio = ({ singleData }) => {
           </li>
           <li className="bg-gray-800 px-4 py-1 rounded text-[#808DAD] hover: duration-300">
             <a>Web</a>
-          </li>
+          </li> */}
         </ul>
         <div className=" relative overflow-hidden">
           <div className="">
