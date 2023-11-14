@@ -22,7 +22,7 @@ const CardPortfolio = ({ singleData }) => {
             <span
               className={`${
                 ind % 2 ? "bg-gray-800 mx-3" : "bg-gray-700"
-              }  px-5 py-1 rounded-md flex `}
+              }  px-3 py-1 rounded-md flex `}
             >
               {ele}
             </span>
