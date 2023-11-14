@@ -21,8 +21,8 @@ const CardPortfolio = ({ singleData }) => {
           {technology_used.map((ele, ind) => (
             <span
               className={`${
-                ind % 2 ? "bg-[#ffffff1a] mx-3" : "bg-[#eec94f4d]"
-              }  px-5 py-1 rounded-md`}
+                ind % 2 ? "bg-gray-800 mx-3" : "bg-gray-700"
+              }  px-5 py-1 rounded-md flex flex-wrap`}
             >
               {ele}
             </span>
