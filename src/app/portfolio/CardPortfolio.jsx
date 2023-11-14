@@ -17,11 +17,11 @@ const CardPortfolio = ({ singleData }) => {
       >
         <h3 className="mb-3 text-xl gradient-text font-bold">{title}</h3>
         <p className="text-[#808DAD]">{info.slice(0, 80)}...</p>
-        <ul className="flex items-center gap-2 flex-wrap">
+        <ul className="flex items-center gap-1 flex-wrap">
           {technology_used.map((ele, ind) => (
             <span
               className={`${
-                ind % 2 ? "bg-gray-800 mx-3" : "bg-gray-700"
+                ind % 2 ? "bg-gray-800" : "bg-gray-700"
               }  px-3 py-1 rounded-md flex `}
             >
               {ele}
