@@ -45,7 +45,7 @@ const LeftSide = () => {
         </button>
         <a
           className="lg:px-14 px-5 py-2 rounded border bg-gradient-to-r from-[#46485F] to-[#b795ff04] lg:text-xl relative gradient overflow-hidden"
-          href="https://drive.google.com/file/d/14fFsP9sSgxhoXt1-0nrJg_FAlEVV3I5U/view?usp=sharing"
+          href="https://drive.google.com/file/d/135fES2H2OJadXIPAkWIhO7M7Q7_LVTLQ/view?usp=sharing"
           target="_blank"
         >
           Resume
