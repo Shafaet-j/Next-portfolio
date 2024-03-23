@@ -6,6 +6,7 @@ import { Suspense, useEffect, useState } from "react";
 
 const Portfolio = () => {
   const portfolio = usePortfolio();
+  console.log(portfolio);
 
   const [activeFilter, setActiveFilter] = useState("all");
   const [filteredPortfolio, setFilteredPortfolio] = useState(portfolio);

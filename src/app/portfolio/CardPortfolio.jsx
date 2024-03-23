@@ -32,7 +32,6 @@ const CardPortfolio = ({ singleData }) => {
           <div className="">
             <figure className="">
               <Image
-                placeholder="blur"
                 className=" hover:object-bottom h-72 object-top object-cover w-full duration-[4s] rounded-lg"
                 alt="portfolio"
                 src={image}

@@ -84,7 +84,7 @@ const Aboutpage = () => {
             className="w-full"
           >
             <div>
-              <Image placeholder="blur" src={about} alt="person" />
+              <Image src={about} alt="person" />
             </div>
           </motion.div>
         </div>
