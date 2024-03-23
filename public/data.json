@@ -171,5 +171,16 @@
     "liveSite": "https://techno-fix-ten.vercel.app/",
     "client": "https://github.com/Shafaet-j/techno-fix",
     "server": ""
+  },
+  {
+    "id": 12,
+    "title": "SoftKarrot",
+    "image": "https://i.ibb.co/PDDJqTq/figmato-taiwind-css.png",
+    "info": "This is Fully Responsive Front end website.I build this website using Next js,Tailwind Css",
+    "technology_used": ["Next js", "Tailwind", "JavaScript", "Redux Toolkit"],
+    "category": "front-end",
+    "liveSite": "https://www.softkarrot.com/",
+    "client": "",
+    "server": ""
   }
 ]
