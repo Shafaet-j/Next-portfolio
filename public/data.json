@@ -164,7 +164,7 @@
   {
     "id": 11,
     "title": "Techno Fix",
-    "image": "https://ibb.co/L1JVtKT",
+    "image": "https://i.ibb.co/VTQfS6F/tech.png",
     "info": "This is Fully Responsive Front end website.I build this website using Next js,Tailwind Css",
     "technology_used": ["Next js", "Tailwind", "JavaScript", "Redux Toolkit"],
     "category": "front-end",
