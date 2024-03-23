@@ -1,5 +1,60 @@
 [
   {
+    "id": 1,
+    "title": "Restro Recipe web App",
+    "image": "https://i.ibb.co/S3KJXgT/restro.png",
+    "info": "Restro food is a single-page Restaurant/Food recipe web app with a minimalistic UI. Users can log in, browse food recipes, and learn cooking methods. The front-end utilizes React, React Router Dom, Daisy UI, Tailwind, and CSS3. The back-end uses Firebase Auth and Express.js for user authentication. It provides a quick loading time and seamless user experience.",
+    "technology_used": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Node.js",
+      "MongoDB"
+    ],
+    "category": "full-stack",
+    "liveSite": "https://restro-95885.web.app/",
+    "client": "https://github.com/Shafaet-j/restro-client",
+    "server": "https://github.com/Shafaet-j/restro-server"
+  },
+  {
+    "id": 2,
+    "title": "Job Hunter",
+    "image": "https://i.ibb.co/Vtk7C17/jobhunter.png",
+    "info": "This is the description for Project 2.",
+    "technology_used": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Node.js",
+      "MongoDB"
+    ],
+    "category": "front-end",
+    "liveSite": "https://job-hunterr.netlify.app/",
+    "client": "",
+    "server": ""
+  },
+
+  {
+    "id": 3,
+    "title": "Turbo Toy web App",
+    "image": "https://i.ibb.co/vYc8Tc1/heroic.png",
+    "info": "Turbo Toy is a single-page Children Toys web app with a minimalistic UI. Users can log in, create, update, and delete product listings. The front-end uses React, React Router Dom, Daisy UI, Tailwind, and CSS3. The back-end incorporates Firebase Auth, MongoDB, and Express.js. It ensures quick loading times and a seamless user experience.",
+    "technology_used": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React",
+      "Node.js",
+      "MongoDB"
+    ],
+    "category": "full-stack",
+    "liveSite": "https://heroic-toy.web.app/",
+    "client": "https://github.com/Shafaet-j/heroic-toy-client",
+    "server": "https://github.com/Shafaet-j/heroic-toy-server"
+  },
+  {
     "id": 4,
     "title": "SnapSchool Web App",
     "image": "https://i.ibb.co/h896CHt/snapschool.png",
@@ -20,42 +75,6 @@
     "server": "https://github.com/Shafaet-j/snapSchool-server"
   },
   {
-    "id": 1,
-    "title": "Restro Recipe web App",
-    "image": "https://i.ibb.co/S3KJXgT/restro.png",
-    "info": "Restro food is a single-page Restaurant/Food recipe web app with a minimalistic UI. Users can log in, browse food recipes, and learn cooking methods. The front-end utilizes React, React Router Dom, Daisy UI, Tailwind, and CSS3. The back-end uses Firebase Auth and Express.js for user authentication. It provides a quick loading time and seamless user experience.",
-    "technology_used": [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "React",
-      "Node.js",
-      "MongoDB"
-    ],
-    "category": "full-stack",
-    "liveSite": "https://restro-95885.web.app/",
-    "client": "https://github.com/Shafaet-j/restro-client",
-    "server": "https://github.com/Shafaet-j/restro-server"
-  },
-  {
-    "id": 3,
-    "title": "Turbo Toy web App",
-    "image": "https://i.ibb.co/vYc8Tc1/heroic.png",
-    "info": "Turbo Toy is a single-page Children Toys web app with a minimalistic UI. Users can log in, create, update, and delete product listings. The front-end uses React, React Router Dom, Daisy UI, Tailwind, and CSS3. The back-end incorporates Firebase Auth, MongoDB, and Express.js. It ensures quick loading times and a seamless user experience.",
-    "technology_used": [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "React",
-      "Node.js",
-      "MongoDB"
-    ],
-    "category": "full-stack",
-    "liveSite": "https://heroic-toy.web.app/",
-    "client": "https://github.com/Shafaet-j/heroic-toy-client",
-    "server": "https://github.com/Shafaet-j/heroic-toy-server"
-  },
-  {
     "id": 5,
     "title": "Zenithnex",
     "image": "https://i.ibb.co/h8XnJG5/screencapture-zenithnex-netlify-app-2023-08-19-16-22-23.png",
@@ -73,24 +92,6 @@
     "client": "https://github.com/Shafaet-j/zenithnex-front-end"
   },
 
-  {
-    "id": 2,
-    "title": "Job Hunter",
-    "image": "https://i.ibb.co/Vtk7C17/jobhunter.png",
-    "info": "This is the description for Project 2.",
-    "technology_used": [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "React",
-      "Node.js",
-      "MongoDB"
-    ],
-    "category": "front-end",
-    "liveSite": "https://job-hunterr.netlify.app/",
-    "client": "",
-    "server": ""
-  },
   {
     "id": 6,
     "title": "Recruit pro",
@@ -158,6 +159,17 @@
     "category": "front-end",
     "liveSite": "https://dramatic-movie.vercel.app/",
     "client": "https://github.com/Shafaet-j/Dramatic-movie",
+    "server": ""
+  },
+  {
+    "id": 11,
+    "title": "Techno Fix",
+    "image": "https://ibb.co/L1JVtKT",
+    "info": "This is Fully Responsive Front end website.I build this website using Next js,Tailwind Css",
+    "technology_used": ["Next js", "Tailwind", "JavaScript", "Redux Toolkit"],
+    "category": "front-end",
+    "liveSite": "https://techno-fix-ten.vercel.app/",
+    "client": "https://github.com/Shafaet-j/techno-fix",
     "server": ""
   }
 ]
