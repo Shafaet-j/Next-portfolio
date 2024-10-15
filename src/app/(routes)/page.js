@@ -4,6 +4,7 @@ import Technology from "@/components/HomePage/Technology/Technology";
 import Testimonial from "@/components/HomePage/Testimonial/Testimonial";
 import WhatIdo from "@/components/HomePage/WhatIdo/WhatIdo";
 
+
 export default function Homepage() {
   return (
     <div>

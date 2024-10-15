@@ -1,11 +1,11 @@
 import Link from "next/link";
 import React from "react";
-import wordpress from "../../../public/wordpress.png";
-import frontend from "../../../public/frontend.png";
-import backend from "../../../public/backend.png";
-import figma from "../../../public/figma.png";
-import psd from "../../../public/psd.png";
-import fullstack from "../../../public/fullstack.png";
+import wordpress from "../../../../public/wordpress.png";
+import frontend from "../../../../public/frontend.png";
+import backend from "../../../../public/backend.png";
+import figma from "../../../../public/figma.png";
+import psd from "../../../../public/psd.png";
+import fullstack from "../../../../public/fullstack.png";
 import Image from "next/image";
 
 const Service = () => {

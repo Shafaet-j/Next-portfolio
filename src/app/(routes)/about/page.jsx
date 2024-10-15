@@ -5,7 +5,8 @@ import { GiCheckMark } from "react-icons/gi";
 import Image from "next/image";
 import Education from "./Education";
 import Link from "next/link";
-import about from "../../../public/about.png";
+// import about from "../../../public/about.png";
+import about from '../../../../public/about.png'
 
 const Aboutpage = () => {
   return (
