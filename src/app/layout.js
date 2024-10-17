@@ -1,5 +1,6 @@
 
 import "./globals.css";
+import { AntdRegistry } from '@ant-design/nextjs-registry';
 
 export const metadata = {
   title: "Shafaet",
@@ -9,9 +10,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className=" bg-[#070A29] text-[#adbef8]">
-
-        {children}
+      <body className=" ">
+        <AntdRegistry>
+          {children}
+        </AntdRegistry>
 
       </body>
     </html>

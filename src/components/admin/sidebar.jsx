@@ -1,89 +1,47 @@
-"use client"
-import React, { useState } from 'react';
 
-import {
-    DesktopOutlined,
-    FileOutlined,
-    PieChartOutlined,
-    TeamOutlined,
-    UserOutlined,
-    MenuFoldOutlined,
-    MenuUnfoldOutlined,
+import { Menu, } from 'antd';
+import Sider from 'antd/es/layout/Sider';
+import Link from 'next/link';
 
-} from '@ant-design/icons';
-import { Button, Layout, Menu, theme } from 'antd';
-const { Header, Sider, Content, Footer } = Layout;
-function getItem(label, key, icon, children) {
-    return {
-        key,
-        icon,
-        children,
-        label,
-    };
-}
+
 const items = [
 
-    getItem('Projects', 'sub1', <UserOutlined />, [
-        getItem('All Projects', '3'),
-        getItem('Bill', '4'),
-        getItem('Alex', '5'),
-    ]),
-    getItem('Team', 'sub2', <TeamOutlined />,
-        [
-            getItem('Team 1', '6'),
-            getItem('Team 2', '8')
-        ]
-    ),
-    getItem('Files', '9', <FileOutlined />),
+    {
+        key: 'sub1',
+        label: "Project",
+        children: [
+            { key: '1', label: <Link href="/dashboard/project">All Projects</Link> },
+            { key: '2', label: <Link href="dashboard/category">Category</Link> },
+
+        ],
+    },
+    {
+        key: 'sub2',
+        label: "User",
+        children: [
+            { key: '3', label: <Link href="/dashboard/users">All Users</Link> },
+
+        ],
+    },
 ];
 
-const DashboardSidebar = ({ children }) => {
-    const [collapsed, setCollapsed] = useState(false);
+const DashboardSidebar = () => {
+
 
     return (
-        <div className=' h-screen'>
-            <Layout>
-                <Sider trigger={null} collapsible collapsed={collapsed}>
-                    <div className="demo-logo-vertical" />
-                    <div>
-                        logo
-                    </div>
-                    <Menu
-                        className=' pt-10'
-                        theme="dark"
-                        mode="inline"
-                        defaultSelectedKeys={['1']}
-                        items={items}
-                    />
-                </Sider>
-                <Layout>
-                    <Header
-                        className=' h-[10vh] bg-gray-200'
-                    >
-                        <Button
-                            type="text"
-                            icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-                            onClick={() => setCollapsed(!collapsed)}
-                            style={{
-                                fontSize: '16px',
-                                width: 64,
-                                height: 64,
-                            }}
-                        />
-                    </Header>
-                    <Content className='min-h-[calc(100vh-160px)]'>
-                        {children}
-                    </Content>
-                    <Footer
-                        style={{
-                            textAlign: 'center',
-                        }}
-                    >
-                        Front-end Developer ©{new Date().getFullYear()} Created by Shafaet Hossen
-                    </Footer>
-                </Layout>
-            </Layout>
-        </div>
+
+        <Sider className="  border-r-[#dbdbdbf1] min-h-[calc(100vh)] pt-10 max-w-[220px]">
+            <Menu
+                theme='dark'
+                defaultSelectedKeys={['1']}
+                defaultOpenKeys={['sub1']}
+                mode="inline"
+                items={items}
+            />
+        </Sider>
+
+
+
     )
 }
 
