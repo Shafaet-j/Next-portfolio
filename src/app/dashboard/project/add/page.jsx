@@ -1,33 +1,48 @@
 "use client";
-import { Card, Select, Button, Form, Input, Upload } from 'antd';
+import { Card, Select, Button, Form, Input, Upload,message } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import { useState } from "react";
+import toast from 'react-hot-toast';
+
 
 const AddProject = () => {
+    const [isLoading,SetIsloading] = useState(false)
     const [form] = Form.useForm();
     const [fileList, setFileList] = useState([]);
     const [imgUrls, setImgUrls] = useState([]);
-
+    
+    
     const onFinish = async (values) => {
+        SetIsloading(prev=>!isLoading)
         const finalData = { ...values, images: imgUrls };
-        try {
-            const response = await fetch("http://localhost:5000/api/projects/add", {
+
+        // Using toast.promise to show loading, success, and error messages
+        toast.promise(
+            fetch("http://localhost:5000/api/projects/add", {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(finalData),
-            });
-
-            if (response.ok) {
-                
-                form.resetFields(); // Reset form fields after success
-                setFileList([]); // Clear file list if necessary
-                setImgUrls([]); // Clear uploaded image URLs
-                const data = await response.json();
-                console.log('Server response:', data);
+            })
+                .then(async (response) => {
+                    if (response.ok) {
+                        SetIsloading(prev => isLoading)
+                        form.resetFields();  // Reset form fields after success
+                        setFileList([]);     // Clear file list if necessary
+                        setImgUrls([]);      // Clear uploaded image URLs
+                        const data = await response.json();
+                        console.log('Server response:', data);
+                    } else {
+                        throw new Error('Error when fetching');
+                    }
+                }),
+            {
+                loading: 'Saving project...',
+                success: 'Project created successfully!',
+                error: 'Failed to create project',
             }
-        } catch (error) {
+        ).catch(error => {
             console.error('Error:', error);
-        }
+        });
     };
 
     const normFile = (e) => (Array.isArray(e) ? e : e?.fileList);
@@ -58,7 +73,8 @@ const AddProject = () => {
     };
 
     return (
-        <div className="p-3">
+        <div className="p-3 overflow-y-scroll">
+          
             <Form layout="vertical" onFinish={onFinish} autoComplete="off" className="grid grid-cols-3 gap-5">
                 <Card title="Project Name" className="col-span-1">
                     <Form.Item label="Project Name" name="title" rules={[{ required: true, message: 'Please input project name!' }]}>
@@ -85,37 +101,50 @@ const AddProject = () => {
                     </Form.Item>
                 </Card>
 
-                <Card title="Category">
-                    <Form.Item label="Category" name="category" rules={[{ required: true, message: 'Please select a category!' }]}>
-                        <Select>
-                            <Select.Option value="full-stack">Full Stack</Select.Option>
-                            <Select.Option value="frontend">Frontend</Select.Option>
-                            <Select.Option value="backend">Backend</Select.Option>
-                        </Select>
-                    </Form.Item>
-                    <Form.Item  label="Technology Used" name="technology_used" rules={[{ required: true, message: 'Please select a category!' }]}>
-                        <Select mode='tags'>
-                           
-                        </Select>
-                    </Form.Item>
-                </Card>
+                <div className=' space-y-2'>
+                    <Card title="Category">
+                        <Form.Item label="Category" name="category" rules={[{ required: true, message: 'Please select a category!' }]}>
+                            <Select>
+                                <Select.Option value="Full-stack">Full Stack</Select.Option>
+                                <Select.Option value="Frontend">Frontend</Select.Option>
+                                <Select.Option value="Backend">Backend</Select.Option>
+                            </Select>
+                        </Form.Item>
+                    </Card>
+                    <Card title="Technology Used">
 
-                <Card className="col-span-3">
-                    <div className="flex gap-4">
-                        <Form.Item className="w-1/3" label="Live site link" name="liveSite" rules={[{ required: true, message: 'Please input live site!' }]}>
+                        <Form.Item label="Technology Used" name="technology_used" rules={[{ required: true, message: 'Please select a category!' }]}>
+                            <Select mode='tags'>
+
+                            </Select>
+                        </Form.Item>
+                    </Card>
+                </div>
+
+                <Card title="Liev link" className="col-span-1">
+                   
+                        <Form.Item  label="Live site link" name="liveSite" rules={[{ required: true, message: 'Please input live site!' }]}>
                             <Input />
                         </Form.Item>
-                        <Form.Item className="w-1/3" label="Github client link" name="client">
+                </Card>
+                <Card title="Client link" className="col-span-1">
+                   
+                        <Form.Item  label="Github client link" name="client">
                             <Input />
                         </Form.Item>
-                        <Form.Item className="w-1/3" label="Github server link" name="server">
+                       
+                   
+                </Card>
+                <Card title="Server link" className="col-span-1">
+                   
+                        <Form.Item  label="Github server link" name="server">
                             <Input />
                         </Form.Item>
-                    </div>
+                   
                 </Card>
 
                 <Form.Item>
-                    <Button type="primary" htmlType="submit">Submit</Button>
+                <Button loading={isLoading} disabled={isLoading} type="primary" htmlType="submit">Submit</Button>
                 </Form.Item>
             </Form>
         </div>

@@ -30,7 +30,7 @@ const DashboardSidebar = () => {
 
     return (
 
-        <Sider className="  border-r-[#dbdbdbf1] min-h-[calc(100vh)] pt-10 max-w-[220px]">
+        <Sider  className="  border-r-[#dbdbdbf1] min-h-[calc(100vh)] pt-10 max-w-[220px]">
             <Menu
                 theme='dark'
                 defaultSelectedKeys={['1']}

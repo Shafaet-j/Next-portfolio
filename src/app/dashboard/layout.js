@@ -7,12 +7,12 @@ const Dashboardlayout = ({ children }) => {
 
 
     return (
-        <div className="">
+        <div className=" ">
             <Layout hasSider>
                 <DashboardSidebar />
                 <Layout >
                     <AdminHeader />
-                    <Content className="min-h-[calc(100vh-120px)] bg-violet-100">
+                    <Content className="min-h-[calc(100vh-120px)] bg-[#f0f2f5] ">
                         {children}
                     </Content>
 

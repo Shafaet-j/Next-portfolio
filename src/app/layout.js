@@ -1,4 +1,5 @@
 
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 import { AntdRegistry } from '@ant-design/nextjs-registry';
 
@@ -11,10 +12,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className=" ">
+        <Toaster />
         <AntdRegistry>
           {children}
         </AntdRegistry>
-
+        
       </body>
     </html>
   );
