@@ -1,17 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import React, { Suspense } from "react";
+import React from "react";
 import { BsArrowRight } from "react-icons/bs";
 
 const CardPortfolio = ({ singleData }) => {
   const { images, title, info, _id, technology_used } = singleData;
-  console.log(singleData, "signle")
   return (
-    <Suspense
-      fallback={
-        <h1 className=" text-6xl text-red-700 text-center">Loading...</h1>
-      }
-    >
+    
       <div
         className="card-bg p-8 rounded-2xl space-y-5 hover:border-[#5c27fe] border-transparent border-2 group duration-500"
         data-aos="fade-up"
@@ -48,7 +43,7 @@ const CardPortfolio = ({ singleData }) => {
           </Link>
         </div>
       </div>
-    </Suspense>
+    
   );
 };
 

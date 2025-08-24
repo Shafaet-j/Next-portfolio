@@ -21,14 +21,14 @@ export async function creteProject(data: any) {
     }
 }
 
-export async function getAllProject(filter?, search?, sort?, pagination?) {
+export async function getAllProject() {
     try {
         const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/project/get-all-project`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ filter, search, sort, pagination }), // ✅ fixed
+            body: JSON.stringify({}), // ✅ fixed
         });
 
         if (!res.ok) {
@@ -36,7 +36,7 @@ export async function getAllProject(filter?, search?, sort?, pagination?) {
         }
 
         const result = await res.json();
-        console.log(result,"action")
+       
         return result;
     } catch (error) {
         console.error("Error in getAllProject:", error);
