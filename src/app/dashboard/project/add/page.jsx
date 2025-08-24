@@ -1,49 +1,48 @@
 "use client";
-import { Card, Select, Button, Form, Input, Upload,message } from 'antd';
+import { Card, Select, Button, Form, Input, Upload, message } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import { useState } from "react";
 import toast from 'react-hot-toast';
+import { creteProject } from '@/action/projectData';
 
 
 const AddProject = () => {
-    const [isLoading,SetIsloading] = useState(false)
+    const [isLoading, setIsloading] = useState(false)
     const [form] = Form.useForm();
     const [fileList, setFileList] = useState([]);
     const [imgUrls, setImgUrls] = useState([]);
-    
-    
-    const onFinish = async (values) => {
-        SetIsloading(prev=>!isLoading)
-        const finalData = { ...values, images: imgUrls };
 
-        // Using toast.promise to show loading, success, and error messages
-        toast.promise(
-            fetch("http://localhost:5000/api/projects/add", {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(finalData),
-            })
-                .then(async (response) => {
-                    if (response.ok) {
-                        SetIsloading(prev => isLoading)
-                        form.resetFields();  // Reset form fields after success
-                        setFileList([]);     // Clear file list if necessary
-                        setImgUrls([]);      // Clear uploaded image URLs
-                        const data = await response.json();
-                        console.log('Server response:', data);
-                    } else {
-                        throw new Error('Error when fetching');
-                    }
-                }),
-            {
-                loading: 'Saving project...',
-                success: 'Project created successfully!',
-                error: 'Failed to create project',
-            }
-        ).catch(error => {
-            console.error('Error:', error);
-        });
+
+    const onFinish = async (values) => {
+        setIsloading(true)
+        const finalData = { ...values, images: imgUrls };
+        console.log(finalData)
+        await addProject(finalData);
+        setIsloading(false);
+
     };
+
+    // async function addProject(data) {
+    //     console.log(data)
+    //     const res = await creteProject(data)
+    //     console.log(res,"res")
+    // }
+
+    async function addProject(data) {
+        try {
+            const res = await toast.promise(
+                creteProject(data),
+                {
+                    loading: "Creating project...",
+                    success: "Project created successfully! 🎉",
+                    error: "Something went wrong 😢",
+                }
+            );
+            console.log(res, "res");
+        } catch (err) {
+            console.error(err);
+        }
+    }
 
     const normFile = (e) => (Array.isArray(e) ? e : e?.fileList);
 
@@ -74,7 +73,7 @@ const AddProject = () => {
 
     return (
         <div className="p-3 overflow-y-scroll">
-          
+
             <Form layout="vertical" onFinish={onFinish} autoComplete="off" className="grid grid-cols-3 gap-5">
                 <Card title="Project Name" className="col-span-1">
                     <Form.Item label="Project Name" name="title" rules={[{ required: true, message: 'Please input project name!' }]}>
@@ -122,29 +121,31 @@ const AddProject = () => {
                 </div>
 
                 <Card title="Liev link" className="col-span-1">
-                   
-                        <Form.Item  label="Live site link" name="liveSite" rules={[{ required: true, message: 'Please input live site!' }]}>
-                            <Input />
-                        </Form.Item>
+
+                    <Form.Item label="Live site link" name="liveSite" rules={[{ required: true, message: 'Please input live site!' }]}>
+                        <Input />
+                    </Form.Item>
                 </Card>
                 <Card title="Client link" className="col-span-1">
-                   
-                        <Form.Item  label="Github client link" name="client">
-                            <Input />
-                        </Form.Item>
-                       
-                   
+
+                    <Form.Item label="Github client link" name="client">
+                        <Input />
+                    </Form.Item>
+
+
                 </Card>
                 <Card title="Server link" className="col-span-1">
-                   
-                        <Form.Item  label="Github server link" name="server">
-                            <Input />
-                        </Form.Item>
-                   
+
+                    <Form.Item label="Github server link" name="server">
+                        <Input />
+                    </Form.Item>
+
                 </Card>
 
                 <Form.Item>
-                <Button loading={isLoading} disabled={isLoading} type="primary" htmlType="submit">Submit</Button>
+                    <Button type="primary" htmlType="submit" loading={isLoading}>
+                        Submit
+                    </Button>
                 </Form.Item>
             </Form>
         </div>
