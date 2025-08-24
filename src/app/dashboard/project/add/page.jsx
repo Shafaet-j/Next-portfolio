@@ -4,6 +4,7 @@ import { PlusOutlined } from '@ant-design/icons';
 import { useState } from "react";
 import toast from 'react-hot-toast';
 import { creteProject } from '@/action/projectData';
+import { useRouter } from 'next/navigation';
 
 
 const AddProject = () => {
@@ -11,6 +12,7 @@ const AddProject = () => {
     const [form] = Form.useForm();
     const [fileList, setFileList] = useState([]);
     const [imgUrls, setImgUrls] = useState([]);
+    const router = useRouter();
 
 
     const onFinish = async (values) => {
@@ -38,6 +40,7 @@ const AddProject = () => {
                     error: "Something went wrong 😢",
                 }
             );
+            router.push("dashboard/project")
             console.log(res, "res");
         } catch (err) {
             console.error(err);
