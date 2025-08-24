@@ -4,7 +4,8 @@ import React, { Suspense } from "react";
 import { BsArrowRight } from "react-icons/bs";
 
 const CardPortfolio = ({ singleData }) => {
-  const { image, title, info, id, technology_used } = singleData;
+  const { images, title, info, _id, technology_used } = singleData;
+  console.log(singleData, "signle")
   return (
     <Suspense
       fallback={
@@ -20,9 +21,9 @@ const CardPortfolio = ({ singleData }) => {
         <ul className="flex items-center gap-1 flex-wrap">
           {technology_used.map((ele, ind) => (
             <span
-              className={`${
-                ind % 2 ? "bg-gray-800" : "bg-gray-700"
-              }  px-3 py-1 rounded-md flex `}
+              key={ind}
+              className={`${ind % 2 ? "bg-gray-800" : "bg-gray-700"
+                }  px-3 py-1 rounded-md flex `}
             >
               {ele}
             </span>
@@ -34,13 +35,13 @@ const CardPortfolio = ({ singleData }) => {
               <Image
                 className=" hover:object-bottom h-72 object-top object-cover w-full duration-[4s] rounded-lg"
                 alt="portfolio"
-                src={image}
+                src={images[0]}
                 width={500}
                 height={400}
               />
             </figure>
           </div>
-          <Link href={`/portfolio/${id}`}>
+          <Link href={`/portfolio/${_id}`}>
             <button className="font-semibold text-2xl absolute -bottom-[55px] -right-[55px]  w-10 h-10 bg-[#5C27FE] group-hover:bottom-0 group-hover:right-0 duration-300 text-center rounded-tl-md hover:bg-[#171F38]  flex items-center justify-center">
               <BsArrowRight />
             </button>

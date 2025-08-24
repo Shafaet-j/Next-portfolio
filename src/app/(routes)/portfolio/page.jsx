@@ -1,31 +1,22 @@
-"use client";
+
 import Link from "next/link";
 import CardPortfolio from "./CardPortfolio";
-import usePortfolio from "@/hooks/usePortfolio";
-import { Suspense, useEffect, useState } from "react";
 
-const Portfolio = () => {
-  const portfolio = usePortfolio();
-  console.log(portfolio);
+import { getAllProject } from "@/action/projectData";
 
-  const [activeFilter, setActiveFilter] = useState("all");
-  const [filteredPortfolio, setFilteredPortfolio] = useState(portfolio);
-  useEffect(() => {
-    if (activeFilter === "all") {
-      setFilteredPortfolio(portfolio);
-    } else {
-      const filteredData = portfolio.filter(
-        (item) => item.category === activeFilter
-      );
-      setFilteredPortfolio(filteredData);
-    }
-  }, [portfolio, activeFilter]);
+const Portfolio = async () => {
+
+  const data = await getAllProject();
+  console.log(data,"sdfsd")
+  const projects = data.data
+
+
 
   return (
     <section className="border-b-2 border-slate-800 lg:py-10 px-5 md:px-0">
       <div className="container mx-auto">
         <div className=" text-left lg:mt-10 mb-20">
-          <h1 className="text-xl lg:text-3xl mb-6">Project Details</h1>
+          <h1 className="text-xl lg:text-3xl mb-6">All Projects</h1>
           <p>
             <span className=" mr-3 text-primary">
               <Link href="/">Home</Link>
@@ -42,7 +33,7 @@ const Portfolio = () => {
               Some of my excelent work
             </h2>
           </div>
-          <div className=" flex gap-5 justify-center items-center">
+          {/* <div className=" flex gap-5 justify-center items-center">
             <button
               onClick={() => setActiveFilter("all")}
               className={`hover:text-[#5C27FE] font-bold ${
@@ -67,17 +58,15 @@ const Portfolio = () => {
             >
               Front-end
             </button>
-          </div>
+          </div> */}
         </div>
-        <Suspense
-          fallback={<span className="loading loading-bars loading-lg"></span>}
-        >
-          <div className=" grid lg:grid-cols-3 gap-6">
-            {filteredPortfolio.map((singleData) => (
-              <CardPortfolio key={singleData.id} singleData={singleData} />
-            ))}
-          </div>
-        </Suspense>
+
+        <div className=" grid lg:grid-cols-3 gap-6">
+          {projects.map((singleData) => (
+            <CardPortfolio key={singleData._id} singleData={singleData} />
+          ))}
+        </div>
+
       </div>
     </section>
   );

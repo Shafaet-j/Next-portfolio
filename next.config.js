@@ -4,10 +4,13 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "i.ibb.co",
+        hostname: "*",
       },
+
     ],
+    domains: ["res.cloudinary.com"],
   },
+  reactStrictMode: false,
 };
 
 module.exports = nextConfig;

@@ -1,3 +1,4 @@
+import { getSingleProject } from "@/action/projectData";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -14,8 +15,9 @@ import {
 
 const page = async ({ params }) => {
   const id = params.id;
-  const res = await fetch(`https://shafaet.vercel.app/api/projects/${id}`);
-  const data = await res.json();
+  const res = await getSingleProject(id);
+  const data = res?.data
+  console.log(data, "details data")
   return (
     <section className="container mx-auto px-4">
       <div className=" text-left mt-20">
@@ -61,28 +63,32 @@ const page = async ({ params }) => {
         <div className=" grid-cols-2 grid grid-rows-3 gap-5 max-h-[600px]">
           <Image
             className="object-cover rounded-2xl col-start-1 col-end-3 h-[395px] w-full row-end-3 row-start-1 bg-top"
-            src={data?.image}
+            src={data?.images[0]}
             style={{ objectPosition: "top" }}
             alt={data.title}
             height={300}
             width={640}
           />
-          <Image
-            className="object-cover rounded-2xl h-[200px]"
-            src={data?.image}
-            style={{ objectPosition: "center" }}
-            alt={data.title}
-            height={300}
-            width={640}
-          />
-          <Image
-            className="object-cover rounded-2xl h-[200px]"
-            src={data?.image}
-            style={{ objectPosition: "bottom" }}
-            alt={data.title}
-            height={300}
-            width={640}
-          />
+          {
+            data.images[1] &&
+            <Image
+              className="object-cover rounded-2xl h-[200px]"
+              src={data?.images[1]}
+              style={{ objectPosition: "center" }}
+              alt={data.title}
+              height={300}
+              width={640}
+            />
+          }
+          {data.images[2] &&
+            <Image
+              className="object-cover rounded-2xl h-[200px]"
+              src={data?.images[2]}
+              style={{ objectPosition: "bottom" }}
+              alt={data.title}
+              height={300}
+              width={640}
+            />}
         </div>
       </div>
       <section className=" mt-32">
