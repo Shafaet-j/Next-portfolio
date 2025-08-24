@@ -3,11 +3,12 @@ import Link from "next/link";
 import CardPortfolio from "./CardPortfolio";
 
 import { getAllProject } from "@/action/projectData";
+import FilterButton from "@/components/ui/filterButton";
 
 const Portfolio = async () => {
 
   const data = await getAllProject();
-  console.log(data,"sdfsd")
+  console.log(data, "sdfsd")
   const projects = data.data
 
 
@@ -33,39 +34,15 @@ const Portfolio = async () => {
               Some of my excelent work
             </h2>
           </div>
-          {/* <div className=" flex gap-5 justify-center items-center">
-            <button
-              onClick={() => setActiveFilter("all")}
-              className={`hover:text-[#5C27FE] font-bold ${
-                activeFilter === "all" ? "text-[#5C27FE]" : ""
-              }`}
-            >
-              All portfolio
-            </button>
-            <button
-              onClick={() => setActiveFilter("full-stack")}
-              className={`hover:text-[#5C27FE] font-bold ${
-                activeFilter === "full-stack" ? "text-[#5C27FE]" : ""
-              }`}
-            >
-              Full-stack
-            </button>
-            <button
-              onClick={() => setActiveFilter("front-end")}
-              className={`hover:text-[#5C27FE] font-bold ${
-                activeFilter === "front-end" ? "text-[#5C27FE]" : ""
-              }`}
-            >
-              Front-end
-            </button>
-          </div> */}
-        </div>
 
-        <div className=" grid lg:grid-cols-3 gap-6">
+        </div>
+        <FilterButton projects={projects} />
+
+        {/* <div className=" grid lg:grid-cols-3 gap-6">
           {projects.map((singleData) => (
             <CardPortfolio key={singleData._id} singleData={singleData} />
           ))}
-        </div>
+        </div> */}
 
       </div>
     </section>
