@@ -28,7 +28,8 @@ export async function getAllProject() {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({}), // ✅ fixed
+            body: JSON.stringify({}),
+            cache: "no-store", // ✅ fixed
         });
 
         if (!res.ok) {
