@@ -29,9 +29,17 @@ const ContactForm = () => {
     };
 
     // handle form submit
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         console.log("Form Data:", formData);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API}/api/contact/send`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData),
+        });
+
+        const data = await res.json();
+        console.log(data);
     };
 
     return (
