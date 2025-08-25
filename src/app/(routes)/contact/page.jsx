@@ -1,3 +1,4 @@
+import ContactForm from "@/components/ui/ContactForm";
 import Link from "next/link";
 import React from "react";
 import {
@@ -56,67 +57,7 @@ const ContactPage = () => {
             </div>
           </div>
           <div className="shadow-2xl lg:w-1/2 mb-10">
-            <form className=" space-y-5">
-              <div className="form-control items-center relative">
-                <input
-                  type="text"
-                  placeholder="Name"
-                  className="input input-bordered w-full py-10 focus:bg-[#58547034] bg-transparent"
-                />
-                <FaUserCircle
-                  size={20}
-                  className=" absolute top-[36%] right-0 mr-5 opacity-40"
-                ></FaUserCircle>
-              </div>
-              <div className="form-control relative">
-                <input
-                  type="email"
-                  placeholder="email"
-                  className="input input-bordered py-10 focus:bg-[#58547034] bg-transparent"
-                />
-                <FaEnvelope
-                  size={20}
-                  className=" absolute top-[36%] right-0 mr-5 opacity-40"
-                ></FaEnvelope>
-              </div>
-              <div className="form-control relative">
-                <input
-                  type="text"
-                  placeholder="Phone"
-                  className="input input-bordered py-10 focus:bg-[#58547034] bg-transparent"
-                />
-                <FaPhone
-                  size={20}
-                  className=" absolute top-[36%] right-0 mr-5 opacity-40"
-                ></FaPhone>
-              </div>
-              <div className="form-control relative">
-                <input
-                  type="text"
-                  placeholder="Subject"
-                  className="input input-bordered py-10 focus:bg-[#58547034] bg-transparent"
-                />
-                <FaPen
-                  size={20}
-                  className=" absolute top-[36%] right-0 mr-5 opacity-40"
-                ></FaPen>
-              </div>
-              <div className="form-control relative">
-                <textarea
-                  className="textarea textarea-bordered py-10 focus:bg-[#58547034] bg-transparent"
-                  placeholder="Message"
-                ></textarea>
-                <FaCommentAlt
-                  size={20}
-                  className=" absolute top-[36%] right-0 mr-5 opacity-40"
-                ></FaCommentAlt>
-              </div>
-              <div className="form-control mt-6">
-                <button className="rounded-md border border-[#5C27FE] bg-[#171F38] px-12 py-3 text-[#5C27FE] duration-300 hover:border-[#808DAD] hover:text-[#808DAD]">
-                  Send
-                </button>
-              </div>
-            </form>
+          <ContactForm/>
           </div>
         </div>
       </div>

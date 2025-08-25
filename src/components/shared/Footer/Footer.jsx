@@ -5,6 +5,7 @@ import { AiOutlineInstagram } from "react-icons/ai";
 import { TiSocialTwitterCircular } from "react-icons/ti";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
   return (
     <footer className=" text-[#adbef8]">
       <div className="container mx-auto">
@@ -27,7 +28,7 @@ const Footer = () => {
           </div>
           <h3 className="  font-semibold">Developed By Shafaet Hossen</h3>
           <p className="  font-semibold">
-            Copyright © 2023 - All right reserved
+            Copyright ©  {currentYear} - All right reserved
           </p>
         </div>
       </div>
