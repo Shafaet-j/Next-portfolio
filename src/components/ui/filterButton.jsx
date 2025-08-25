@@ -36,7 +36,7 @@ const FilterButton = ({ projects }) => {
           Full-stack
         </button>
         <button
-          className={`hover:text-[#5C27FE] font-bold ${activeFilter === "Front-end" ? "text-[#5C27FE]" : ""}`}
+          className={`hover:text-[#5C27FE] font-bold ${activeFilter === "Frontend" ? "text-[#5C27FE]" : ""}`}
           onClick={() => handleFilter("Front-end")}
         >
           Front-end

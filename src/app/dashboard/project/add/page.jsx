@@ -40,7 +40,7 @@ const AddProject = () => {
                     error: "Something went wrong 😢",
                 }
             );
-            router.push("dashboard/project")
+            router.push("/dashboard/project")
             console.log(res, "res");
         } catch (err) {
             console.error(err);
@@ -107,9 +107,11 @@ const AddProject = () => {
                     <Card title="Category">
                         <Form.Item label="Category" name="category" rules={[{ required: true, message: 'Please select a category!' }]}>
                             <Select>
-                                <Select.Option value="Full-stack">Full Stack</Select.Option>
-                                <Select.Option value="Frontend">Frontend</Select.Option>
-                                <Select.Option value="Backend">Backend</Select.Option>
+                                <Select.Option value="full-stack">Full Stack</Select.Option>
+                                <Select.Option value="front-end">Frontend</Select.Option>
+                                <Select.Option value="backend">Backend</Select.Option>
+                                <Select.Option value="wordpress">Wordpress</Select.Option>
+                                <Select.Option value="others">Others</Select.Option>
                             </Select>
                         </Form.Item>
                     </Card>

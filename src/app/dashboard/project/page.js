@@ -81,14 +81,14 @@ const Project = () => {
         },
         {
             title: "Published",
-            dataIndex: "published",
+            dataIndex: "isActive",
             key: "published",
             render: (text) => (text ? "Yes" : "No"),
         },
         {
             title: "Site Link",
-            dataIndex: "site_link",
-            key: "site_link",
+            dataIndex: "liveSite",
+            key: "liveSite",
             render: (text) =>
                 text ? (
                     <a href={text} target="_blank" rel="noopener noreferrer">
